@@ -9,7 +9,8 @@ sudo -u postgres psql -U postgres postgres <<SQL
     NOSUPERUSER NOINHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;
 SQL
 
-echo "host   $PG_DBNAME    $PG_USER      0.0.0.0/0   md5" >> /etc/postgresql/$PG_VERSION/main/pg_hba.conf
+echo "local     all             all                     password" >> /etc/postgresql/$PG_VERSION/main/pg_hba.conf
+echo "host      $PG_DBNAME      $PG_USER    0.0.0.0/0   md5" >> /etc/postgresql/$PG_VERSION/main/pg_hba.conf
 echo "track_counts = on" >> /etc/postgresql/$PG_VERSION/main/postgresql.conf
 echo "autovacuum = on" >> /etc/postgresql/$PG_VERSION/main/postgresql.conf
 service postgresql restart
