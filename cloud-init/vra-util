@@ -1,6 +1,7 @@
 #!/bin/bash
-wget -O /tmp/$1.sh https://github.com/prydin/vra-utils/$1.sh
-chmod +x /tmp/$1.sh
+FILE=$RANDOM.sh
+wget -O /tmp/$FILE https://raw.github.com/prydin/vra-utils/master/$1.sh
+chmod +x /tmp/$FILE
 shift 
-/tmp/$1.sh "$@"
-rm -f /tmp/$1.sh
+/tmp/$FILE "$@"
+rm -f /tmp/$FILE
