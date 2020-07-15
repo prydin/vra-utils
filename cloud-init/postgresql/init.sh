@@ -10,7 +10,7 @@ echo "listen_addresses = '*'" >> /etc/postgresql/$PG_VERSION/main/postgresql.con
 
 sudo -u postgres psql -U postgres postgres <<SQL
     CREATE ROLE $PG_USER LOGIN
-    ENCRYPTED PASSWORD 'md5hash($PG_PASSWORD)'
+    ENCRYPTED PASSWORD '$PG_PASSWORD'
     NOSUPERUSER NOINHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;
 SQL
 
