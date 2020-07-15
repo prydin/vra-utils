@@ -1,7 +1,7 @@
 #!/bin/sh
 PG_DBNAME=$1
 PG_USER=$2
-PG+PASSWORD=$3
+PG_PASSWORD=$3
 
 apt install -y postgresql
 
