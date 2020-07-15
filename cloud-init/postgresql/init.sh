@@ -1,7 +1,12 @@
 #!/bin/sh
+PG_DBNAME=$1
+PG_USER=$2
+PG+PASSWORD=$3
+
+apt install -y postgresql
+
 PG_VERSION=`ls -1 /etc/postgresql/`
 echo "listen_addresses = '*'" >> /etc/postgresql/$PG_VERSION/main/postgresql.conf
-
 
 sudo -u postgres psql -U postgres postgres <<SQL
     CREATE ROLE $PG_USER LOGIN
