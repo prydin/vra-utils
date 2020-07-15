@@ -1,4 +1,5 @@
 #!/bin/bash
+#
 FILE=$RANDOM.sh
 wget -O /tmp/$FILE https://raw.github.com/prydin/vra-utils/master/cloud-init/$1.sh
 chmod +x /tmp/$FILE
