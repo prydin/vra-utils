@@ -1,3 +1,5 @@
+name: 'java-14-ubuntu-18'
+version: 1
 formatVersion: 1
 inputs:
   user:
@@ -22,17 +24,6 @@ inputs:
     description: Target Environment
     default: vSphere
     title: Select Environment for Deployment
-  dbuser:
-    type: string
-    description: Database User
-    default: dbuser
-    title: Database User
-  dbpassword:
-    type: string
-    title: Database Password
-    description: Database Password
-    encrypted: true
-    default: VMware1!
 resources:
   DBServer:
     type: Cloud.Machine
@@ -55,7 +46,7 @@ resources:
         runcmd:
           - curl https://raw.githubusercontent.com/prydin/vra-utils/master/cloud-init/install.sh | /bin/bash
           - vra-util ubuntu-18/init "${input.user}" "${input.password}"
-          - vra-util ubuntu-18/postgresql/latest-init all "${input.dbuser}" "${input.dbpassword}"
+          - vra-util ubuntu-18/java/jdk-14-init
       constraints:
         - tag: '${"env:" + to_lower(input.environment)}'
       networks:
