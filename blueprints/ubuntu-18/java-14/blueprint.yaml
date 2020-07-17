@@ -25,7 +25,7 @@ inputs:
     default: vSphere
     title: Select Environment for Deployment
 resources:
-  DBServer:
+  JavaServer:
     type: Cloud.Machine
     properties:
       image: prydin-ubuntu-18-dhcp
