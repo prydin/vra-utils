@@ -1,5 +1,5 @@
-name: 'plain-ubuntu-18' 
-version: 1
+name: plain-ubuntu-18
+version: 2
 formatVersion: 1
 inputs:
   user:
@@ -24,17 +24,6 @@ inputs:
     description: Target Environment
     default: vSphere
     title: Select Environment for Deployment
-  dbuser:
-    type: string
-    description: Database User
-    default: dbuser
-    title: Database User
-  dbpassword:
-    type: string
-    title: Database Password
-    description: Database Password
-    encrypted: true
-    default: VMware1!
 resources:
   DBServer:
     type: Cloud.Machine
