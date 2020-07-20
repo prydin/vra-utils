@@ -19,3 +19,6 @@ echo "host      $PG_DBNAME      $PG_USER    0.0.0.0/0   md5" >> /etc/postgresql/
 echo "track_counts = on" >> /etc/postgresql/$PG_VERSION/main/postgresql.conf
 echo "autovacuum = on" >> /etc/postgresql/$PG_VERSION/main/postgresql.conf
 service postgresql restart
+
+# Signal that initialization is done
+touch /tmp/postgres-running
