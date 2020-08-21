@@ -6,3 +6,6 @@ echo debconf shared/accepted-oracle-license-v1-2 select true | sudo debconf-set-
 echo debconf shared/accepted-oracle-license-v1-2 seen true | sudo debconf-set-selections
 
 sudo apt install -y openjdk-14-jre-headless
+
+# Signal that the installation is done
+touch /tmp/jdk-14-installed
