@@ -32,5 +32,6 @@ apt-get update -y
 apt-get install rabbitmq-server -y --fix-missing
 
 ## Create virtual host and user
+rabbitmqctl add_vhost $RABBIT_VHOST
 rabbitmqctl add_user $RABBIT_USER $RABBIT_PASSWORD
 rabbitmqctl set_permissions -p $RABBIT_VHOST $RABBIT_USER ".*" ".*" ".*"
